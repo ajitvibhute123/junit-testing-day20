@@ -5,12 +5,12 @@ public class UserRegistrationTest {
     UserRegistrationFormat userRegistration = new UserRegistrationFormat();
     @Test
     public void givenName_WhenProper_ShouldReturnTrue(){
-        boolean result = userRegistration.firstName("Ajit");
+        boolean result = userRegistration.firstName("Ashvini");
         Assert.assertTrue(result);
     }
     @Test
     public void giveLastName_WhenProper_ShouldReturnTrue(){
-        boolean result = userRegistration.lastName("Vibhute");
+        boolean result = userRegistration.lastName("Kanojia");
         Assert.assertTrue(result);
     }
     @Test
@@ -21,6 +21,16 @@ public class UserRegistrationTest {
     @Test
     public void giveEmailValues_WhenNotProper_ShouldReturnFalse(){
         boolean result = userRegistration.emailValidation("abc..@yahoo.com");
+        Assert.assertFalse(result);
+    }
+    @Test
+    public void giveNumberValue_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.numberValidation("91 1234567890");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void givenNumberValues_WhenNotProper_ShouldReturnFalse(){
+        boolean result = userRegistration.numberValidation("91 08450911877");
         Assert.assertFalse(result);
     }
 }
