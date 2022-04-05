@@ -10,10 +10,14 @@ public class UserRegistrationTest {
     }
     @Test
     public void giveLastName_WhenProper_ShouldReturnTrue(){
- EmailSequenceValidation
+MoodAnalyserTest
         boolean result = userRegistration.lastName("Vibhute");
 =======
+ EmailSequenceValidation
+        boolean result = userRegistration.lastName("vibhute);
+=======
         boolean result = userRegistration.lastName("Vibhute");
+ master
  master
         Assert.assertTrue(result);
     }
