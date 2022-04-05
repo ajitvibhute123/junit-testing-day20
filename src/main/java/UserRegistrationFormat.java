@@ -1,6 +1,13 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Purpose  - Junit Testing
+ * @author  - Ajit Vibhute
+ * @version - 16.0
+ * @since   - 01-04-2022
+ */
+
 public class UserRegistrationFormat {
     Pattern pattern;
     Matcher matcher;
@@ -85,6 +92,15 @@ public class UserRegistrationFormat {
         String regexPassword4 = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
         pattern = Pattern.compile(regexPassword4);
         matcher = pattern.matcher(Password);
+        return matcher.matches();
+    }
+    /*
+    Created a method to validate email
+    */
+    public boolean emailIdValidator(String emailId) {
+        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailId);
         return matcher.matches();
     }
 }
