@@ -5,12 +5,22 @@ public class UserRegistrationTest {
     UserRegistrationFormat userRegistration = new UserRegistrationFormat();
     @Test
     public void givenName_WhenProper_ShouldReturnTrue(){
-        boolean result = userRegistration.firstName("Ashvini");
+        boolean result = userRegistration.firstName("Ajit");
         Assert.assertTrue(result);
     }
     @Test
     public void giveLastName_WhenProper_ShouldReturnTrue(){
-        boolean result = userRegistration.lastName("Kanojia");
+        boolean result = userRegistration.lastName("Vibhute");
         Assert.assertTrue(result);
+    }
+    @Test
+    public void giveEmailVaule_WhenProper_ShouldReturnTrue(){
+        boolean result = userRegistration.emailValidation("abc@gmail.com");
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void giveEmailValues_WhenNotProper_ShouldReturnFalse(){
+        boolean result = userRegistration.emailValidation("abc..@yahoo.com");
+        Assert.assertFalse(result);
     }
 }
